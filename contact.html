@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Fresh Farm | Get Fresh Groceries in Silchar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>Fresh Farm</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="contact.html" class="active"><i class="fas fa-phone-alt"></i> Contact</a></li>
+                <!-- <li><a href="#" class="cart-link"><i class="fas fa-shopping-cart"></i> Cart <span class="cart-count">0</span></a></li> -->
+            </ul>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTACT HERO -->
+    <section class="contact-hero">
+        <div class="contact-hero-content">
+            <h1>Get in Touch with <span class="highlight">Fresh Farm</span></h1>
+            <p class="hero-subtitle">We're here to serve you fresh! Reach out for orders, queries, or feedback.</p>
+            <div class="contact-stats">
+                <div class="contact-stat">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>Delivery Hours</h4>
+                        <p>7:00 AM - 9:00 PM Daily</p>
+                    </div>
+                </div>
+                <div class="contact-stat">
+                    <i class="fas fa-truck"></i>
+                    <div>
+                        <h4>Delivery Area</h4>
+                        <p>All of Silchar City</p>
+                    </div>
+                </div>
+                <div class="contact-stat">
+                    <i class="fas fa-headset"></i>
+                    <div>
+                        <h4>Response Time</h4>
+                        <p>Within 15 minutes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-hero-image">
+            <img src="images/contact-hero.jpg" alt="Fresh Farm Delivery">
+        </div>
+    </section>
+
+    <!-- CONTACT OPTIONS -->
+    <section class="contact-options">
+        <div class="container">
+            <div class="section-header">
+                <h2>How Would You Like to Connect?</h2>
+                <p>Choose your preferred way to get fresh groceries</p>
+            </div>
+            <div class="options-grid">
+                <!-- WhatsApp Option -->
+                <div class="contact-card whatsapp-card">
+                    <div class="contact-card-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp Order</h3>
+                    <p>Fastest way to order. Send your grocery list and we'll confirm immediately.</p>
+                    <div class="contact-info">
+                        <div class="contact-detail">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <span class="label">Phone Number</span>
+                                <span class="value">+91 98765 43210</span>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <span class="label">Response Time</span>
+                                <span class="value">5-10 minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/919876543210" class="btn btn-block whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                </div>
+
+                <!-- Phone Call Option -->
+                <div class="contact-card phone-card">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Phone Call</h3>
+                    <p>Prefer speaking? Call us directly for personalized assistance.</p>
+                    <div class="contact-info">
+                        <div class="contact-detail">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <span class="label">Primary Number</span>
+                                <span class="value">+91 98765 43210</span>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <span class="label">Alternate Number</span>
+                                <span class="value">+91 91234 56789</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="tel:+919876543210" class="btn btn-block phone-btn">
+                        <i class="fas fa-phone-alt"></i> Call Now
+                    </a>
+                </div>
+
+                <!-- Location & Hours -->
+                <div class="contact-card location-card">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Location & Hours</h3>
+                    <p>Find our delivery schedule and service area information.</p>
+                    <div class="contact-info">
+                        <div class="contact-detail">
+                            <i class="fas fa-map-pin"></i>
+                            <div>
+                                <span class="label">Service Area</span>
+                                <span class="value">Silchar City & Surroundings</span>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <span class="label">Delivery Hours</span>
+                                <span class="value">7 AM - 9 PM (Daily)</span>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-truck"></i>
+                            <div>
+                                <span class="label">Delivery Time</span>
+                                <span class="value">Within 2 Hours</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-block location-btn" id="showMapBtn">
+                        <i class="fas fa-map"></i> View Service Area
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUICK ORDER GUIDE -->
+    <section class="order-guide">
+        <div class="container">
+            <div class="section-header">
+                <h2>How to Place Your Order</h2>
+                <p>Simple steps to get fresh groceries delivered</p>
+            </div>
+            <div class="guide-steps">
+                <div class="guide-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Prepare Your List</h3>
+                        <p>Make a list of vegetables, chicken, fish, or other items you need. Include quantities.</p>
+                    </div>
+                </div>
+                <div class="guide-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Contact Us</h3>
+                        <p>Send your list via WhatsApp or call us directly. Mention any special requirements.</p>
+                    </div>
+                </div>
+                <div class="guide-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Get Confirmation</h3>
+                        <p>We'll confirm availability, price, and delivery time within 10 minutes.</p>
+                    </div>
+                </div>
+                <div class="guide-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Receive & Pay</h3>
+                        <p>Get fresh items delivered. Pay cash on delivery or via UPI.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to common questions</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is the minimum order amount?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The minimum order amount is ₹99. We have no delivery charges for orders above ₹299. For orders below ₹299, a nominal delivery charge of ₹20 applies.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What are your delivery timings?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We deliver from 7:00 AM to 9:00 PM daily, including Sundays and holidays. Same-day delivery is available for orders placed before 7:00 PM.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What if I receive a damaged or rotten item?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We have a 100% quality guarantee. If any item is damaged, rotten, or unsatisfactory, we'll either replace it immediately or provide a full refund. Just notify us within 2 hours of delivery.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you accept online payments?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We accept UPI payments (PhonePe, GPay, PayTM) and cash on delivery. Online payment links are shared via WhatsApp for your convenience.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I schedule delivery for a specific time?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! You can schedule delivery for a specific time slot (morning, afternoon, or evening) when placing your order via WhatsApp or phone call.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE AREA MAP MODAL -->
+    <div class="map-modal" id="mapModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Our Service Area in Silchar</h3>
+                <button class="close-modal" id="closeMapBtn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h4>Fresh Farm Delivery Coverage</h4>
+                    <p>We serve all areas of Silchar including:</p>
+                    <ul class="area-list">
+                        <li><i class="fas fa-check-circle"></i> Silchar Town Area</li>
+                        <li><i class="fas fa-check-circle"></i> NIT Road & Surroundings</li>
+                        <li><i class="fas fa-check-circle"></i> Ambikapur</li>
+                        <li><i class="fas fa-check-circle"></i> Tarapur</li>
+                        <li><i class="fas fa-check-circle"></i> Meherpur</li>
+                        <li><i class="fas fa-check-circle"></i> Rangirkhari</li>
+                        <li><i class="fas fa-check-circle"></i> Central Road</li>
+                        <li><i class="fas fa-check-circle"></i> Link Road</li>
+                    </ul>
+                    <p class="note"><i class="fas fa-info-circle"></i> For areas beyond these, please contact us to check availability.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EMERGENCY ORDER BANNER -->
+    <div class="emergency-banner">
+        <div class="container">
+            <div class="banner-content">
+                <div class="banner-text">
+                    <h3><i class="fas fa-bolt"></i> Need Groceries Urgently?</h3>
+                    <p>Emergency orders delivered within 90 minutes*</p>
+                </div>
+                <a href="https://wa.me/919876543210" class="btn emergency-btn">
+                    <i class="fab fa-whatsapp"></i> Emergency Order
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>Fresh Farm</span>
+                </div>
+                <p>Bringing farm-fresh vegetables, chicken, and fish directly to your home in Silchar since 2023.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/919876543210"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Information</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                    <li><i class="fas fa-phone"></i> +91 91234 56789</li>
+                    <li><i class="fas fa-clock"></i> 7:00 AM - 9:00 PM Daily</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Silchar, Assam</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Fresh Farm | Fresh from Farm to Home 🌱 | WhatsApp: +91 98765 43210</p>
+        </div>
+    </footer>
+
+    <!-- Add to existing CSS or create new contact.css -->
+    <style>
+        /* Contact Page Specific Styles */
+        .contact-hero {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 2rem auto;
+            border-radius: 20px;
+        }
+
+        .contact-hero-content h1 {
+            font-size: 3rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .contact-hero-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.2);
+        }
+
+        .contact-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-stat {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .contact-stat i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .contact-stat h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+            color: var(--dark);
+        }
+
+        .contact-stat p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .contact-options {
+            padding: 5rem 2rem;
+            background: var(--light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            border-top: 4px solid var(--primary);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .whatsapp-card {
+            border-top-color: #25D366;
+        }
+
+        .phone-card {
+            border-top-color: var(--secondary);
+        }
+
+        .location-card {
+            border-top-color: var(--warning);
+        }
+
+        .contact-card-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        .whatsapp-card .contact-card-icon {
+            background: rgba(37, 211, 102, 0.1);
+            color: #25D366;
+        }
+
+        .phone-card .contact-card-icon {
+            background: rgba(52, 152, 219, 0.1);
+            color: var(--secondary);
+        }
+
+        .location-card .contact-card-icon {
+            background: rgba(243, 156, 18, 0.1);
+            color: var(--warning);
+        }
+
+        .contact-card h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-card p {
+            color: var(--gray);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .contact-info {
+            margin-bottom: 2rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .contact-detail i {
+            color: var(--primary);
+            font-size: 1.2rem;
+            width: 24px;
+        }
+
+        .label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-bottom: 0.25rem;
+        }
+
+        .value {
+            display: block;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+        }
+
+        .whatsapp-btn:hover {
+            background: #1da851;
+        }
+
+        .phone-btn {
+            background: var(--secondary);
+        }
+
+        .phone-btn:hover {
+            background: #2980b9;
+        }
+
+        .location-btn {
+            background: var(--warning);
+        }
+
+        .location-btn:hover {
+            background: #e67e22;
+        }
+
+        .order-guide {
+            padding: 5rem 2rem;
+        }
+
+        .guide-steps {
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .guide-step {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .guide-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 30px;
+            bottom: -3rem;
+            width: 2px;
+            height: 3rem;
+            background: var(--primary);
+            opacity: 0.3;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-section {
+            padding: 5rem 2rem;
+            background: var(--light);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: rgba(46, 204, 113, 0.05);
+        }
+
+        .faq-question h3 {
+            font-size: 1.1rem;
+            color: var(--dark);
+            margin: 0;
+        }
+
+        .faq-question i {
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 2rem 1.5rem;
+            max-height: 300px;
+        }
+
+        .faq-answer p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .map-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 3000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .map-modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            color: var(--dark);
+            margin: 0;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--gray);
+            cursor: pointer;
+            line-height: 1;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .map-placeholder {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .map-placeholder i {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .map-placeholder h4 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .area-list {
+            list-style: none;
+            text-align: left;
+            margin: 2rem 0;
+            columns: 2;
+            column-gap: 2rem;
+        }
+
+        .area-list li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .area-list i {
+            font-size: 1rem;
+            color: var(--primary);
+        }
+
+        .note {
+            background: rgba(46, 204, 113, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--dark);
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .note i {
+            font-size: 1rem;
+            color: var(--primary);
+        }
+
+        .emergency-banner {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            color: white;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .banner-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .banner-text h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .banner-text p {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .emergency-btn {
+            background: white;
+            color: #ff6b6b;
+            font-weight: 700;
+            padding: 1rem 2rem;
+            white-space: nowrap;
+        }
+
+        .emergency-btn:hover {
+            background: #f8f9fa;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .contact-hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .contact-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .banner-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .contact-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .guide-step {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .guide-step:not(:last-child)::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .area-list {
+                columns: 1;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .contact-hero,
+            .contact-options,
+            .order-guide,
+            .faq-section {
+                padding: 3rem 1rem;
+            }
+            
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-content {
+                margin: 1rem;
+            }
+        }
+    </style>
+
+    <!-- JavaScript for Contact Page -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cart count update from localStorage
+            const cart = JSON.parse(localStorage.getItem('freshFarmCart')) || [];
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.querySelectorAll('.cart-count').forEach(count => {
+                count.textContent = totalItems;
+            });
+
+            // Mobile menu toggle
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if(mobileMenu) {
+                mobileMenu.addEventListener('click', () => {
+                    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                });
+            }
+
+            // Cart link functionality
+            document.querySelector('.cart-link')?.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.location.href = 'index.html';
+            });
+
+            // FAQ Accordion
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const item = question.parentElement;
+                    item.classList.toggle('active');
+                    
+                    // Close other open FAQs
+                    faqQuestions.forEach(q => {
+                        if (q !== question && q.parentElement.classList.contains('active')) {
+                            q.parentElement.classList.remove('active');
+                        }
+                    });
+                });
+            });
+
+            // Map Modal
+            const showMapBtn = document.getElementById('showMapBtn');
+            const closeMapBtn = document.getElementById('closeMapBtn');
+            const mapModal = document.getElementById('mapModal');
+
+            if (showMapBtn && mapModal) {
+                showMapBtn.addEventListener('click', () => {
+                    mapModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+
+                closeMapBtn.addEventListener('click', () => {
+                    mapModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+
+                mapModal.addEventListener('click', (e) => {
+                    if (e.target === mapModal) {
+                        mapModal.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+
+            // Phone number formatting (example - replace with actual numbers)
+            const phoneNumbers = document.querySelectorAll('.value');
+            phoneNumbers.forEach(el => {
+                if (el.textContent.includes('9876543210')) {
+                    el.textContent = '+91 98765 43210';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
