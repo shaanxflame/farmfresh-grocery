@@ -1,9 +1,5 @@
-// DOM Elements - Slider
-const slider = document.querySelector('.slider-container');
-const slides = document.querySelectorAll('.slide');
-const prevBtn = document.querySelector('.slider-control.prev');
-const nextBtn = document.querySelector('.slider-control.next');
-const dots = document.querySelectorAll('.slider-dots .dot');
+// DOM Elements - Slider (moved inside functions to ensure DOM is loaded)
+let slider, slides, prevBtn, nextBtn, dots;
 
 // DOM Elements - General
 const tabButtons = document.querySelectorAll('.tab-btn');
@@ -19,6 +15,15 @@ const SLIDE_DURATION = 5000; // 5 seconds per slide
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize slider elements after DOM is loaded
+    slider = document.querySelector('.slider-container');
+    slides = document.querySelectorAll('.slide');
+    prevBtn = document.querySelector('.slider-control.prev');
+    nextBtn = document.querySelector('.slider-control.next');
+    dots = document.querySelectorAll('.slider-dots .dot');
+    
+    console.log('Slider elements:', { slider, slides: slides.length, prevBtn, nextBtn, dots: dots.length });
+    
     initSlider();
     initMobileMenu();
     setupEventListeners();
@@ -65,19 +70,29 @@ function initMobileMenu() {
 
 // Slider Functions
 function initSlider() {
+    // Check if slider elements exist
+    if (!slider || slides.length === 0 || !prevBtn || !nextBtn || dots.length === 0) {
+        console.error('Slider elements not found!', { slider, slides: slides.length, prevBtn, nextBtn, dots: dots.length });
+        return;
+    }
+    
     // Set initial position
     updateSlider();
     
     // Event listeners for slider controls
-    prevBtn.addEventListener('click', () => {
-        showPrevSlide();
-        resetAutoSlide();
-    });
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            showPrevSlide();
+            resetAutoSlide();
+        });
+    }
     
-    nextBtn.addEventListener('click', () => {
-        showNextSlide();
-        resetAutoSlide();
-    });
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            showNextSlide();
+            resetAutoSlide();
+        });
+    }
     
     // Event listeners for dots
     dots.forEach((dot, index) => {
@@ -89,30 +104,32 @@ function initSlider() {
     
     // Pause auto slide on hover
     const heroSlider = document.querySelector('.hero-slider');
-    heroSlider.addEventListener('mouseenter', pauseAutoSlide);
-    heroSlider.addEventListener('mouseleave', resumeAutoSlide);
-    
-    // Touch support for mobile
-    let startX = 0;
-    let endX = 0;
-    
-    heroSlider.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-        pauseAutoSlide();
-    });
-    
-    heroSlider.addEventListener('touchend', (e) => {
-        endX = e.changedTouches[0].clientX;
-        handleSwipe();
-        resumeAutoSlide();
-    });
-    
-    function handleSwipe() {
-        const threshold = 50;
-        if (startX - endX > threshold) {
-            showNextSlide();
-        } else if (endX - startX > threshold) {
-            showPrevSlide();
+    if (heroSlider) {
+        heroSlider.addEventListener('mouseenter', pauseAutoSlide);
+        heroSlider.addEventListener('mouseleave', resumeAutoSlide);
+        
+        // Touch support for mobile
+        let startX = 0;
+        let endX = 0;
+        
+        heroSlider.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            pauseAutoSlide();
+        });
+        
+        heroSlider.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            handleSwipe();
+            resumeAutoSlide();
+        });
+        
+        function handleSwipe() {
+            const threshold = 50;
+            if (startX - endX > threshold) {
+                showNextSlide();
+            } else if (endX - startX > threshold) {
+                showPrevSlide();
+            }
         }
     }
     
