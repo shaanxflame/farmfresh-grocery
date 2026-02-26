@@ -338,6 +338,26 @@ p { margin-bottom: 1rem; }
     box-shadow: 0 0 12px rgba(255,255,255,0.5);
 }
 
+/* Slide Progress Bar */
+.slide-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #25d366, #128c7e, #25d366);
+    z-index: 10;
+    animation: slideProgress 7s linear forwards;
+}
+
+@keyframes slideProgress {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
 /* ============================= */
 /* CARD STYLE IMPROVEMENT */
 /* ============================= */

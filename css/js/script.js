@@ -11,7 +11,7 @@ const faqItems = document.querySelectorAll('.faq-item');
 let currentSlide = 0;
 let slideInterval;
 let autoSlideEnabled = true;
-const SLIDE_DURATION = 5000; // 5 seconds per slide
+const SLIDE_DURATION = 7000; // 7 seconds per slide for better visibility
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
@@ -199,6 +199,15 @@ function updateSlider() {
     // Add active class to current slide and dot
     if (slides[currentSlide]) {
         slides[currentSlide].classList.add('active');
+        
+        // Restart progress bar animation
+        const progressBar = slides[currentSlide].querySelector('.slide-progress');
+        if (progressBar) {
+            progressBar.style.animation = 'none';
+            setTimeout(() => {
+                progressBar.style.animation = `slideProgress ${SLIDE_DURATION}ms linear forwards`;
+            }, 10);
+        }
     }
     if (dots[currentSlide]) {
         dots[currentSlide].classList.add('active');
