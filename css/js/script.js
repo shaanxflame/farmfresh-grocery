@@ -180,20 +180,11 @@ function updateSlider() {
     dots.forEach(dot => dot.classList.remove('active'));
     
     // Add active class to current slide and dot
-    slides[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
-    
-    // Update slider position
-    slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-    
-    // Restart progress animation
-    const activeSlide = slides[currentSlide];
-    const progressBar = activeSlide.querySelector('.slide::after');
-    if (progressBar) {
-        progressBar.style.animation = 'none';
-        setTimeout(() => {
-            progressBar.style.animation = `progress ${SLIDE_DURATION}ms linear`;
-        }, 10);
+    if (slides[currentSlide]) {
+        slides[currentSlide].classList.add('active');
+    }
+    if (dots[currentSlide]) {
+        dots[currentSlide].classList.add('active');
     }
 }
 
