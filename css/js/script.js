@@ -1,56 +1,14 @@
-// DOM Elements
+// DOM Elements - Slider
+const slider = document.querySelector('.slider-container');
+const slides = document.querySelectorAll('.slide');
+const prevBtn = document.querySelector('.slider-control.prev');
+const nextBtn = document.querySelector('.slider-control.next');
+const dots = document.querySelectorAll('.slider-dots .dot');
+
+// DOM Elements - General
 const tabButtons = document.querySelectorAll('.tab-btn');
 const productCards = document.querySelectorAll('.product-card');
 const faqItems = document.querySelectorAll('.faq-item');
-
-let currentIndex = 0;
-const totalSlides = slides.length;
-
-// Function to show slide
-function showSlide(index) {
-    // Remove active class from all
-    slides.forEach((slide) => slide.classList.remove('active'));
-    dots.forEach((dot) => dot.classList.remove('active'));
-
-    // Add active class to current
-    slides[index].classList.add('active');
-    dots[index].classList.add('active');
-}
-
-// Next button
-nextBtn.addEventListener('click', () => {
-    currentIndex++;
-    if (currentIndex >= totalSlides) {
-        currentIndex = 0;
-    }
-    showSlide(currentIndex);
-});
-
-// Previous button
-prevBtn.addEventListener('click', () => {
-    currentIndex--;
-    if (currentIndex < 0) {
-        currentIndex = totalSlides - 1;
-    }
-    showSlide(currentIndex);
-});
-
-// Dots click
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        currentIndex = index;
-        showSlide(currentIndex);
-    });
-});
-
-// Auto Slide every 5 seconds
-setInterval(() => {
-    currentIndex++;
-    if (currentIndex >= totalSlides) {
-        currentIndex = 0;
-    }
-    showSlide(currentIndex);
-}, 5000);
 
 
 // State
