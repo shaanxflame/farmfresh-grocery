@@ -436,7 +436,8 @@ function preloadSliderImages() {
         'https://images.unsplash.com/photo-1566385101042-1a0f0c126a96?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
         'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
         'https://images.unsplash.com/photo-1604176354204-9268737828e4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
-        'https://images.unsplash.com/photo-1589923186741-b7d59d6b2c4a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80'
+        'https://images.unsplash.com/photo-1589923186741-b7d59d6b2c4a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+        'images/img2.jpg' // local picture should be placed into the images folder
     ];
     
     imageUrls.forEach(url => {
