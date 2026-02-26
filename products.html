@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products | Fresh Farm - Farm to Home Grocery Delivery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* PRODUCTS PAGE SPECIFIC STYLES */
+        .products-hero {
+            background: linear-gradient(135deg, #2d4433 0%, #527a5a 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .products-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .products-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .filters-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 3rem 0;
+            padding: 0 2rem;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 1.8rem;
+            border: 2px solid #527a5a;
+            background: white;
+            color: #2d4433;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #527a5a;
+            color: white;
+        }
+
+        .products-section {
+            padding: 3rem 2rem;
+        }
+
+        .products-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #f0f0f0;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(82, 122, 90, 0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background: #f5f5f5;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: #f97316;
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-category {
+            color: #527a5a;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #2d4433;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .product-features {
+            font-size: 0.85rem;
+            color: #527a5a;
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-features li {
+            padding: 0.3rem 0;
+        }
+
+        .product-features li:before {
+            content: "✓ ";
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .order-btn {
+            background: linear-gradient(135deg, #527a5a 0%, #2d4433 100%);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .order-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 16px rgba(82, 122, 90, 0.3);
+        }
+
+        .order-btn i {
+            font-size: 1.1rem;
+        }
+
+        .no-products {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+
+        .no-products i {
+            font-size: 3rem;
+            color: #ccc;
+            margin-bottom: 1rem;
+        }
+
+        .section-divider {
+            max-width: 1400px;
+            margin: 3rem auto;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #ddd, transparent);
+        }
+
+        .quick-contact {
+            background: #f5f9f7;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .quick-contact h3 {
+            color: #2d4433;
+            margin-bottom: 1rem;
+        }
+
+        .quick-contact p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-cta {
+            display: inline-flex;
+            gap: 1rem;
+        }
+
+        .contact-btn {
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn-wa {
+            background: #25d366;
+            color: white;
+        }
+
+        .contact-btn-wa:hover {
+            background: #1da851;
+        }
+
+        .contact-btn-sec {
+            background: white;
+            color: #527a5a;
+            border: 2px solid #527a5a;
+        }
+
+        .contact-btn-sec:hover {
+            background: #f5f9f7;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 1rem;
+            }
+
+            .products-hero h1 {
+                font-size: 2rem;
+            }
+
+            .filters-container {
+                margin: 2rem 0;
+            }
+
+            .filter-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .products-hero {
+                padding: 2rem 1rem;
+            }
+
+            .products-hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .filters-container {
+                gap: 0.5rem;
+            }
+
+            .contact-cta {
+                flex-direction: column;
+            }
+
+            .contact-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>Fresh Farm</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="products.html" class="active"><i class="fas fa-box"></i> Products</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="contact.html"><i class="fas fa-phone-alt"></i> Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="products-hero">
+        <h1>Our Fresh Products</h1>
+        <p>Hand-picked from local farms in Silchar, delivered fresh to your doorstep. Browse our complete catalog of vegetables, meats, and dairy products.</p>
+    </section>
+
+    <!-- FILTERS -->
+    <div class="products-container">
+        <div class="filters-container">
+            <button class="filter-btn active" data-filter="all">All Products</button>
+            <button class="filter-btn" data-filter="vegetables">🥬 Vegetables</button>
+            <button class="filter-btn" data-filter="chicken">🍗 Chicken</button>
+            <button class="filter-btn" data-filter="fish">🐟 Fish</button>
+            <button class="filter-btn" data-filter="dairy">🥛 Dairy</button>
+        </div>
+    </div>
+
+    <!-- PRODUCTS GRID -->
+    <section class="products-section">
+        <div class="products-container">
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- QUICK CONTACT SECTION -->
+    <section class="products-container">
+        <div class="section-divider"></div>
+        <div class="quick-contact">
+            <h3>Didn't find what you're looking for?</h3>
+            <p>We have many more products available daily. Contact us on WhatsApp to check availability or place a custom order.</p>
+            <div class="contact-cta">
+                <a href="https://wa.me/919876543210" class="contact-btn contact-btn-wa">
+                    <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                </a>
+                <a href="contact.html" class="contact-btn contact-btn-sec">
+                    <i class="fas fa-envelope"></i> Send Message
+                </a>
+            </div>
+        </div>
+        <div class="section-divider" style="margin-bottom: 0;"></div>
+    </section>
+
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Order Now</span>
+    </a>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-leaf"></i>
+                        <span>Fresh Farm</span>
+                    </div>
+                    <p>Bringing farm-fresh vegetables, chicken, and fish directly to your home in Silchar. Fresh, fast, and eco-friendly since 2023.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/919876543210"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-info">
+                        <li><i class="fab fa-whatsapp"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-clock"></i> 7:00 AM - 9:00 PM (Daily)</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Silchar, Assam</li>
+                        <li><i class="fas fa-envelope"></i> info@freshfarmsilchar.com</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Delivery Areas</h4>
+                    <ul>
+                        <li>Silchar City</li>
+                        <li>Meherpur</li>
+                        <li>Ambicapatty</li>
+                        <li>Tarapur</li>
+                        <li>Rangirkhari</li>
+                        <li>Central Road</li>
+                        <li>Hospital Road</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Fresh Farm | Serving Silchar with Fresh Groceries | Made with ❤️ for our community | Eco-friendly since day one</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Products Database
+        const products = [
+            {
+                id: 1,
+                name: "Fresh Tomatoes",
+                category: "vegetables",
+                description: "Farm fresh, juicy tomatoes",
+                badge: "Best Seller",
+                image: "https://images.unsplash.com/photo-1561136594-7f68413baa99?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+                features: ["Pesticide-free", "Farm fresh daily", "Perfect for cooking"]
+            },
+            {
+                id: 2,
+                name: "Fresh Onions",
+                category: "vegetables",
+                description: "Red onions, premium quality",
+                image: "https://images.unsplash.com/photo-1560707303-4e980ce876ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+                features: ["Premium quality", "Long shelf life", "Great taste"]
+            },
+            {
+                id: 3,
+                name: "Fresh Potatoes",
+                category: "vegetables",
+                description: "Perfect for daily cooking",
+                image: "https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+                features: ["Starch-rich", "Great for curries", "Store well"]
+            },
+            {
+                id: 4,
+                name: "Leafy Greens",
+                category: "vegetables",
+                description: "Spinach, coriander, mint",
+                badge: "New",
+                image: "https://images.unsplash.com/photo-1590779033100-9f60a05a013d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+                features: ["Rich in iron", "Organic farm", "Fresh daily"]
+            },
+            {
+                id: 5,
+                name: "Fresh Broccoli",
+                category: "vegetables",
+                description: "Crispy and nutrient-rich",
+                image: "https://images.unsplash.com/photo-1590080875642-3c2e7e1e3d0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+                features: ["High in vitamins", "Organic", "Perfectly fresh"]
+            },
+            {
+                id: 6,
+                name: "Fresh Carrots",
+                category: "vegetables",
+                description: "Sweet orange carrots from local farms",
+                image: "https://images.unsplash.com/photo-1590956014056-dcd2f70d7e7a?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+                features: ["Rich beta-carotene", "Farm fresh", "Sweet taste"]
+            },
+            {
+                id: 7,
+                name: "Fresh Chicken",
+                category: "chicken",
+                description: "Cleaned and cut pieces",
+                badge: "Farm Fresh",
+                image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+                features: ["Hygienically cleaned", "Cut to order", "Same-day delivery"]
+            },
+            {
+                id: 8,
+                name: "Chicken Breast",
+                category: "chicken",
+                description: "Premium boneless chicken breast",
+                image: "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+                features: ["Boneless", "Lean protein", "Perfect for grilling"]
+            },
+            {
+                id: 9,
+                name: "Chicken Legs",
+                category: "chicken",
+                description: "Fresh chicken legs for curry and soup",
+                image: "https://images.unsplash.com/photo-1555939594-58d7cb561609?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+                features: ["Flavorful", "Great for cooking", "Affordable"]
+            },
+            {
+                id: 10,
+                name: "Rohu Fish",
+                category: "fish",
+                description: "Fresh from local ponds",
+                image: "https://images.unsplash.com/photo-1579586337278-3f7b879eb6ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+                features: ["Fresh daily", "Cleaned ready", "High omega-3"]
+            },
+            {
+                id: 11,
+                name: "Catfish",
+                category: "fish",
+                description: "Fresh catfish for traditional recipes",
+                image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+                features: ["Tender meat", "Local favorite", "Freshly caught"]
+            },
+            {
+                id: 12,
+                name: "Prawn",
+                category: "fish",
+                description: "Fresh prawns for special meals",
+                image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+                features: ["Premium quality", "Fresh daily", "Perfect for curries"]
+            },
+            {
+                id: 13,
+                name: "Fresh Milk",
+                category: "dairy",
+                description: "Pure cow milk, daily delivery",
+                image: "https://images.unsplash.com/photo-1563636619-e9143da7973b?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+                features: ["Pure & fresh", "Daily delivery", "No additives"]
+            },
+            {
+                id: 14,
+                name: "Fresh Curd",
+                category: "dairy",
+                description: "Homemade, thick curd",
+                image: "https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+                features: ["Homemade taste", "Thick texture", "Fresh daily"]
+            },
+            {
+                id: 15,
+                name: "Butter",
+                category: "dairy",
+                description: "Pure unsalted butter",
+                image: "https://images.unsplash.com/photo-1589985643862-17ae904b01ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+                features: ["Pure ghee", "No preservatives", "Premium quality"]
+            },
+            {
+                id: 16,
+                name: "Paneer",
+                category: "dairy",
+                description: "Fresh homemade paneer",
+                badge: "Popular",
+                image: "https://images.unsplash.com/photo-1599599810694-b5ac4dd64b39?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+                features: ["Fresh daily", "Soft texture", "Perfect for cooking"]
+            }
+        ];
+
+        // Initialize Products Display
+        function displayProducts(filter = "all") {
+            const grid = document.getElementById("productsGrid");
+            grid.innerHTML = "";
+
+            const filtered = filter === "all" 
+                ? products 
+                : products.filter(p => p.category === filter);
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="no-products" style="grid-column: 1/-1;">
+                        <i class="fas fa-inbox"></i>
+                        <p>No products found in this category.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(product => {
+                const card = document.createElement("div");
+                card.className = "product-card";
+                card.innerHTML = `
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
+                        ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ""}
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">${product.category}</div>
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-description">${product.description}</p>
+                        <ul class="product-features">
+                            ${product.features.map(f => `<li>${f}</li>`).join("")}
+                        </ul>
+                        <a href="https://wa.me/919876543210?text=Hi! I'd like to order ${product.name} from Fresh Farm" class="order-btn">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Filter Button Functionality
+        document.querySelectorAll(".filter-btn").forEach(btn => {
+            btn.addEventListener("click", function() {
+                document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+                this.classList.add("active");
+                displayProducts(this.dataset.filter);
+            });
+        });
+
+        // Initial Display
+        displayProducts();
+    </script>
+
+</body>
+</html>
